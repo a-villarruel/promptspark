@@ -106,7 +106,7 @@ With more time, PromptSpark can evolve into:
 
 ---
 
-## 🏁 Agent League Positioning
+## 🏁 Agent Design Rationale
 
 PromptSpark demonstrates:
 
