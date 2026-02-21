@@ -6,6 +6,12 @@ It transforms simple human input into structured, innovative product concepts us
 
 Designed specifically as a fast, reliable MVP for AI agent prototyping.
 
+## 📸 CLI Demo
+
+Below is an example of PromptSpark generating a structured game concept from a simple idea:
+
+![PromptSpark CLI Demo](assets/demo.png)
+
 ---
 
 ## 🤖 Agent Concept
