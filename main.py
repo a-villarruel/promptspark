@@ -3,36 +3,49 @@
 from api import generate_idea
 from prompts import build_prompt
 
-
 def main():
-    print("=" * 50)
-    print("🚀 Welcome to PromptSpark")
-    print("=" * 50)
+    categories = {
+        "1": "App",
+        "2": "Game",
+        "3": "Startup",
+        "4": "AI Tool",
+        "5": "Physical Product"
+    }
 
-    categories = ["Startup", "Game", "Story", "App", "Marketing"]
+    print("\n" + "=" * 50)
+    print("🚀 PromptSpark – AI Idea Generator")
+    print("=" * 50 + "\n")
 
-    print("\nChoose a category:")
-    for i, cat in enumerate(categories, 1):
-        print(f"{i}. {cat}")
+    print("Choose a category:")
+    for key, value in categories.items():
+        print(f"{key}. {value}")
 
-    try:
-        choice = int(input("\nEnter number: "))
-        category = categories[choice - 1]
-    except (ValueError, IndexError):
-        print("Invalid selection.")
+    choice = input("\nEnter category number: ").strip()
+
+    if choice not in categories:
+        print("\n❌ Invalid choice. Please restart and try again.\n")
         return
 
-    idea = input("\nEnter your base idea: ")
+    category = categories[choice]
+    idea = input("Enter a base idea or theme: ").strip()
 
-    print("\n✨ Generating creative concept...\n")
+    if not idea:
+        print("\n❌ Idea cannot be empty. Please restart.\n")
+        return
+
+    print("\n⏳ Generating your AI-powered idea...\n")
 
     prompt = build_prompt(category, idea)
     result = generate_idea(prompt)
 
-    print("=" * 50)
-    print("💡 Generated Concept")
-    print("=" * 50)
+    print("\n" + "=" * 50)
+    print("💡 GENERATED IDEA")
+    print("=" * 50 + "\n")
     print(result)
+
+    print("\n" + "=" * 50)
+    print("✨ Powered by AI – PromptSpark")
+    print("=" * 50 + "\n")
 
 
 if __name__ == "__main__":
